@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+/* ===== 메인 슬라이드 ===== */
+.main_visual {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+.main_visual .swiper {
+  width: 100%;
+  height: 100%;
+}
+.main_visual > h2 {
+  display: none;
+}
+.main_visual img {
+  display: block;
+  width: 100%;
+}
+
+/* ===== 컨텐츠 공통 ===== */
+#cont1, #cont2, #cont3, #cont4 {
+  width: 1200px;
+  margin: 20px auto;
+  padding: 40px 0;
+}
+#cont1 { padding: 30px 0; }
+#cont2 { width: 100%; background: #efefef; }
+#cont4 { height: 70vh; }
+
+/* ===== 스와이퍼 버튼/페이지네이션 ===== */
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #e41937;
+}
+.main_visual .swiper-button-next,
+.main_visual .swiper-button-prev {
+  transform: scale(1.5);
+}
+.swiper-pagination-bullet {
+  width: 10px; height: 10px;
+  transition: .5s;
+}
+.main_visual .swiper-pagination-bullet {
+  background: #fff;
+}
+.main_visual .swiper-pagination-bullet-active {
+  width: 50px;
+  border-radius: 10px;
+}
+section .swiper-pagination-bullet {
+  background: #211613;
+  transform: translateY(10px);
+  z-index: 1000;
+}
+section .swiper-pagination-bullet-active {
+  background: #e41937;
+  width: 50px;
+  border-radius: 10px;
+}
+
+/* ===== 더보기 버튼 ===== */
+.more_btn {
+  margin: 70px auto 0;
+  width: 130px; height: 32px;
+  text-align: center;
+}
+.more_btn > a {
+  display: block;
+  line-height: 32px;
+  font-size: 14px;
+  border: 1px solid #211613;
+  background: #fff;
+  box-sizing: border-box;
+  transition: .3s;
+}
+.more_btn:hover > a {
+  background: #e41937;
+  border-color: #e41937;
+  color: #faf9f9;
+}
+
+/* ===== 제목/부제목 ===== */
+.c_title {
+  font-size: 30px;
+  line-height: 40px;
+}
+.sub_title {
+  font-size: 16px;
+  font-family: '바탕체', sans-serif;
+}
+.c_title, .sub_title, .tab_menu, .more_btn {
+  text-align: center;
+}
+
+/* ===== 탭 메뉴 ===== */
+.tab_menu {
+  padding-top: 100px;
+}
+.tab_menu .menu_btn {
+  display: inline-block;
+  width: 100px;
+  margin: 0 10px;
+  padding: 6px 0;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #211613;
+  color: #efefef;
+  transition: .3s;
+}
+.tab_menu input[type=radio] { display: none; }
+.tab_menu input[type=radio]:checked + .menu_btn {
+  background: #e41937;
+}
+
+/* 시즌/인기 메뉴 */
+.season_m, .hit_m { display: none; }
+#tab_01:checked ~ .season_m { display: block; }
+#tab_02:checked ~ .hit_m { display: block; }
+
+.mySwiper2 { position: relative; }
+.mySwiper2 figure {
+  margin: 0 auto;
+  padding-top: 20px;
+  width: 220px; height: 250px;
+}
+.mySwiper2 figure img { width: 80%; }
+
+/* ===== cont2 (이벤트) ===== */
+#cont2 { padding: 30px 0; }
+.event_m {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.mySwiper3 .swiper-wrapper { 
+  display: flex; height: 300px; 
+}
+.mySwiper3 .swiper-slide {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 0;
+}
+.mySwiper3 img {
+  width: 330px; height: 200px;
+  object-fit: cover;
+  display: inline-block;
+}
+
+/* ===== cont3 (뉴스 그리드) ===== */
+#g_wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+  gap: 10px;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+  box-sizing: border-box;
+}
+#g_wrap > a {
+  width: 100%; height: 200px;
+  background: #efefef;
+}
+#g_wrap > a > figure {
+  display: flex;
+  gap: 30px;
+}
+#g_wrap > a > figure > figcaption {
+  transform: translateY(13px);
+}
+#g_wrap > a > figure > figcaption > p {
+  width: 300px;
+}
+#g_wrap > a > figure > figcaption > p:first-child {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+#g_wrap > a > figure > figcaption > span {
+  display: block;
+  transform: translate(240px, 70px);
+}
+.img_box {
+  width: 170px; height: 170px;
+  overflow: hidden;
+  transform: translate(10px, 13px);
+}
+.img_box > img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+/* hover 효과 */
+#g_wrap > a:hover p { text-decoration: underline; }
+#g_wrap > a:hover img { transform: scale(1.2); }
+
+/* ===== cont4 (원형 아이콘) ===== */
+.content_wrap { margin-top: 60px; }
+.content_wrap > ul {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.content_wrap > ul > li {
+  width: 290px; height: 290px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transition: .3s;
+}
+.content_wrap > ul > li:hover { border-color: #6A1820; }
+
+.circle {
+  width: 280px; height: 280px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #6A1820;
+  text-align: center;
+}
+.circle a {
+  display: block;
+  transform: translateY(70%);
+}
+.circle a img {
+  width: 50px; height: 50px;
+  padding-bottom: 20px;
+  transition: .3s;
+}
+.circle a span {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  transition: .5s;
+}
+
+/* hover 효과 */
+.content_wrap > ul > li:hover img {
+  transform: translateY(-15px) scale(1.2);
+}
+.content_wrap > ul > li:hover span {
+  transform: translateY(-5px) scale(1.1);
+}
+.content_wrap > ul > li:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -47px;
+  width: 52px; height: 32px;
+  background: url(../images/tri.png);
+}
+.content_wrap > ul > li:first-child:hover::before { left: 170px; }
+.content_wrap > ul > li:nth-child(2):hover::before { left: 570px; }
+.content_wrap > ul > li:last-child:hover::before { right: 180px; }
+
+.caption {
+  position: absolute;
+  top: 326px; left: 0;
+  width: 1200px; height: 130px;
+  background: #fff;
+  border: 1px solid #6A1820;
+  border-radius: 30px;
+  padding: 40px;
+  line-height: 20px;
+  font-size: 16px;
+  display: none;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.content_wrap > ul > li:hover .caption { display: block; }
